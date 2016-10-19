@@ -10,12 +10,36 @@ $(document).ready(function () {
     loadTweets(true);
   })();
 
+  function encodeText(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
+  function validateText(str) {
+    str = str.trim();
+      if(str.length === 0) {
+        $(".warning > #zerochars").css("display", "block");
+        return false;
+      } else if(str.length > 140) {
+        $(".warning > #maxchars").css("display", "block");
+        return false;
+      } else {
+          return true;
+      }
+  }
+  function displayWarning() {
+    $(".warning").css("display", "block");
+    setTimeout(function() {
+      $(".warning").css("display", "none");
+      $(".warning > #maxchars").css("display", "none");
+      $(".warning > #zerochars").css("display", "none");
+    }, 1500);
+
+  }
   function createTweetElement(userObj) {
     var $tweet = $('<section></section>').addClass('tweet');
     var timeElapsed = Math.floor((Date.now() - userObj.created_at)/8.64e+7) //milliseconds in a day;
     $tweet.append('<header>');
-    $tweet.append(`<article>${userObj.content.text}</article>`);
+    $tweet.append(`<article><p>${userObj.content.text}</p></article>`);
     $tweet.append('<footer>');
     $tweet.children('header').append(`<img src=${userObj.user.avatars.small}>`);
     $tweet.children('header').append(`<h2>${userObj.user.name}</h2>`);
@@ -94,6 +118,7 @@ $(document).ready(function () {
 
   //toggle tweet field
   ($('#compose')).on("click", function() {
+    checkTweetCounter(newtweetForm.children('textarea'));
     newtweetForm.closest('section').slideToggle("medium");
     newtweetForm.children('textarea').focus();
    });
@@ -107,15 +132,20 @@ $(document).ready(function () {
     clearField()
   });
  //post tweet field to server
- //**needs to escape all
   $(".new-tweet > form").on("submit", function(event) {
+    var textarea = $(this).children("textarea");
+    textarea.val(encodeText(textarea.val()));
     event.preventDefault();
-    $.ajax({
-      url: "/tweets/",
-      method: "POST",
-      data: $(this).serialize()
-    }).done(loadTweets(false));
-    clearField();
+    if(validateText(textarea.val())) {
+      $.ajax({
+        url: "/tweets/",
+        method: "POST",
+        data: $(this).serialize()
+      }).done(loadTweets(false));
+      clearField();
+    } else {
+      displayWarning();
+    }
   });
 
 
@@ -123,7 +153,6 @@ $(document).ready(function () {
 });
 
 //reset text box
-
 
 
 

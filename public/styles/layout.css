@@ -34,6 +34,26 @@ body {
   background-color: white;
   z-index: 0;
 }
+.warning {
+  background-color: #d2cdcd;
+  color: inherit;
+  position: absolute;
+  z-index: 2;
+  width: 200px;
+  height: 70px;
+  border: 2px solid gray;
+  left: 27.5%;
+  top: 45px;
+  border-radius: 3px;
+  text-align: center;
+  display: none;
+}
+.warning #zerochars {
+  display: none;
+}
+.warning #maxchars {
+  display: none;
+}
 /*
     It should be only 450px wide
     It should be center aligned to the body

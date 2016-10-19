@@ -1,4 +1,5 @@
 .new-tweet {
+  position: inherit;
   width: 80%;
   height: 150px;
   border: 2px solid gray;
@@ -6,6 +7,7 @@
   margin: 0 auto;
   padding: 10px;
   display: none;
+  z-index: 1;
 }
 
 .new-tweet > h2 {

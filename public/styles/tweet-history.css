@@ -6,6 +6,7 @@
   margin: 15px auto;
   position: relative;
   opacity: .7;
+  z-index: 1;
 }
 .tweet:hover {
   opacity: 1;
@@ -39,7 +40,8 @@
 .tweet article {
   height: 75px;
   padding: 10px;
-  border-bottom: 1px solid gray
+  border-bottom: 1px solid gray;
+  word-wrap: break-word;
 }
 .tweet footer {
   position: absolute;
