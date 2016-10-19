@@ -4,16 +4,38 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
+  //themes dropdown menu
+  $("#themes").on('mouseover', function() {
+    $('.dropdown').children().css('display', 'block');
+  });
+  //themees dropdown destroy
+  $(".dropdown").on('mouseleave', function() {
+    $('.dropdown').children().css('display', 'none');
+  });
+  $("#strawberry").on('click', function() {
+    $('body').css("background-color", "red");
+    $('#nav-bar').css("background-color", "pink");
+    $('#nav-bar').css("color", "black");
+    $('.dropdown').children('li').css("background-color", "pink");
+    $('.dropdown').css("background-color", "pink");
+    $('.dropdown').children('li:hover').css("background-color", "orange");
+    $('.dropdown').children('li:hover').css("color", "black");
+  });
+  $("#classic").on('click', function() {
+    $('body').css("background-color", "#eee");
+    $('#nav-bar').css("background-color", "#009f86");
+    $('#nav-bar').css("color", "#e8fdff");
+    $('.dropdown').css("background-color", "#009f86");
+    $('.dropdown').children('li').css("background-color", "#009f86");
 
-
-
+  });
+////////////////////
   //composition field
   var newtweetForm = $('.counter').closest('form');
 
   //toggle tweet field
-  $('#nav-bar').children('p').on("click", function() {
+  ($('#compose')).on("click", function() {
     newtweetForm.closest('section').toggle();
-
    });
  //need to redirect to composer form after
   //update tweet char count
@@ -105,3 +127,21 @@ function  renderTweet(tweets) {
   });
 
 }
+
+/////////////////////////////
+//themes
+/*
+body background: #eee
+
+Head:
+
+nav bar background: #009f86
+color: #e8fdff
+
+
+
+
+
+
+
+*/

@@ -12,8 +12,9 @@
   float: left;
   height: inherit;
  }
- #nav-bar > p {
-  float: right;
+ #nav-bar .nav-options > p {
+  margin-left: 20px;
+  display: inline-block;
  }
 #nav-bar .logo {
   width: 80px;
@@ -43,4 +44,22 @@
 #nav-bar p:hover {
   background-color: #e8fdff ;
   color: #009f86;
+}
+#nav-bar .dropdown {
+    width: 175px;
+    position: relative;
+    padding-top: 16px;
+}
+#nav-bar .dropdown li {
+background-color: #009f86;
+  color: inherit;
+  display: none;
+
+}
+#nav-bar .dropdown li:hover {
+  background-color: #e8fdff ;
+  color: #009f86;
+}
+#nav-bar .nav-options {
+  float: right;
 }
