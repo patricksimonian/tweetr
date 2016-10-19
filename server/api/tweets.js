@@ -8,6 +8,7 @@ module.exports = function(db) {
 
   tweets.get("/", function(req, res) {
     let tweets = db.getTweets();
+    console.log(tweets);
     // simulate delay
     setTimeout(() => {
       return res.json(tweets);
@@ -15,6 +16,7 @@ module.exports = function(db) {
   });
 
   tweets.post("/", function(req, res) {
+    console.log(req.body);
     if (!req.body.text) {
       res.status(400);
       return res.send("{'error': 'invalid request'}\n");
