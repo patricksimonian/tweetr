@@ -18,8 +18,33 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+.container {
+  position: relative;
+  top: 80px;
+  width: 450px;
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: white;
+  z-index: 0;
+}
+/*
+    It should be only 450px wide
+    It should be center aligned to the body
+    It should have a white background so that users can
+    clearly separate the content space from the "gutter" or "
+    curtains" of the page.
+
+Tip: Add some temporary content like paragraphs or headings
+ into main to see how it flows and that it aligns well vertically.
+Task 2: Fix content behind the nav
+
+Once you follow the tip above, you'll realize that the c
+ontent within the main element is being clipped by the fixed header.
+How can you push it down (say 140px), again with only a CSS change to the main element?*/

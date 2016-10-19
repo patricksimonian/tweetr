@@ -1,0 +1,38 @@
+.new-tweet {
+  width: 80%;
+  height: 150px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.new-tweet > h2 {
+  border-bottom: 2px solid gray;
+}
+.new-tweet > form {
+  margin: 5px auto;
+  width: 100%
+  height: 100px;
+}
+textarea {
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+  height: 60px;
+  padding: 5px;
+}
+.new-tweet .counter {
+  float: right;
+}
+.new-tweet > form > input[type=submit] {
+  border-radius: 3px;
+}
+.new-tweet .clear {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 1px;
+}
+.new-tweet .clear:hover {
+  background-color: #009f86;
+  color: white;
+}
