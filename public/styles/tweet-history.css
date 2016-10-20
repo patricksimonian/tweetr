@@ -47,4 +47,15 @@
   position: absolute;
   bottom: 0;
   margin: 5px;
+  width: 95%;
+}
+.tweet footer .icon {
+  float: right;
+}
+.tweet footer .icon .fa {
+  margin-left: 5px;
+  display: inline-block;
+}
+.tweet footer .icon .fa:hover {
+  color: #009f86;
 }

@@ -55,6 +55,11 @@ $(document).ready(function () {
     $tweet.children('header').append(`<span>${userObj.user.handle}</span>`);
     $tweet.children('header').children('span').addClass("handler");
     $tweet.children('footer').append(`<span>${timeElapsed} days ago</span>`);
+    $tweet.children('footer').append(`<span class="icon"></span>`);
+    $tweet.children('footer').children(".icon").append(`<i class="fa fa-flag" aria-hidden="true"></i>`);
+    $tweet.children('footer').children(".icon").append(`<i class="fa fa-heart" aria-hidden="true"></i>`);
+    $tweet.children('footer').children(".icon").append(`<i class="fa fa-retweet" aria-hidden="true"></i>`);
+
 
     return $tweet;
   }
@@ -74,10 +79,11 @@ $(document).ready(function () {
       $('.tweets-container').prepend($tweet);
     }
   }
-  //loadTweets takes a boolean as a paramater. if true, it will render the
+  //loadTweets takes a boolean as a paramater if true, it will render the
   //tweets.json array, if false it will only render the last index of the tweets.json
   //array
   function loadTweets(onLoad) {
+    clearField();
     var tweetData = $.ajax({
        method: "GET",
        url: "/tweets/",
@@ -124,8 +130,7 @@ $(document).ready(function () {
         url: "/tweets/",
         method: "POST",
         data: $(this).serialize()
-      }).done(loadTweets(false));
-      clearField();
+      }).done(loadTweets(false)); S
     } else {
       displayWarning();
     }
@@ -147,6 +152,14 @@ $(document).ready(function () {
     $('#nav-bar').css("color", "black");
     $('.dropdown').children('li').css("background-color", "#ffc083");
     $('.dropdown').css("background-color", "#ffc083");
+    $(".dropdown > li").hover(function(e) {
+    $(this).css("color",e.type === "mouseenter"?"white":"black");});
+    $(".nav-options > p").hover(function(e) {
+    $(this).css("background-color",e.type === "mouseenter"?"#ff3b51":"#ffc083");});
+    $(".nav-options > p").hover(function(e) {
+    $(this).css("color",e.type === "mouseenter"?"black":"black");});
+
+
   });
   $("#classic").on('click', function() {
     $('body').css("background-color", "#eee");
