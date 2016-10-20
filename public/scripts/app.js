@@ -8,6 +8,7 @@ $(document).ready(function () {
   var newtweetForm = $('.counter').closest('form');
   //initial load of tweets in database
   (function loadPage() {
+    renderTheme("Classic");
     loadTweets(true);
   })();
   //encodes the form data to remove  cross server scripting
@@ -135,9 +136,7 @@ $(document).ready(function () {
       displayWarning();
     }
   });
-////////////////////////////////////////////////////////////////////////////////
-  //need to make this modular.. ie pass in the ame string into a function that
-  //changes css from a themes object for each name
+
   //themes dropdown menu
   $("#themes").on('mouseover', function() {
     $('.dropdown').children().slideDown("fast");
@@ -146,29 +145,10 @@ $(document).ready(function () {
   $(".dropdown").on('mouseleave', function() {
     $('.dropdown').children().slideUp("fast");
   });
-  $("#strawberry").on('click', function() {
-    $('body').css("background-color", "#ff3b51");
-    $('#nav-bar').css("background-color", "#ffc083");
-    $('#nav-bar').css("color", "black");
-    $('.dropdown').children('li').css("background-color", "#ffc083");
-    $('.dropdown').css("background-color", "#ffc083");
-    $(".dropdown > li").hover(function(e) {
-    $(this).css("color",e.type === "mouseenter"?"white":"black");});
-    $(".nav-options > p").hover(function(e) {
-    $(this).css("background-color",e.type === "mouseenter"?"#ff3b51":"#ffc083");});
-    $(".nav-options > p").hover(function(e) {
-    $(this).css("color",e.type === "mouseenter"?"black":"black");});
-
-
+  //render theme
+  $('.dropdown > li').on('click', function (event) {
+    renderTheme(event.target.innerHTML);
+    event.stopPropagation();
   });
-  $("#classic").on('click', function() {
-    $('body').css("background-color", "#eee");
-    $('#nav-bar').css("background-color", "#009f86");
-    $('#nav-bar').css("color", "#e8fdff");
-    $('.dropdown').css("background-color", "#009f86");
-    $('.dropdown').children('li').css("background-color", "#009f86");
-
-  });
-////////////////////////////////////////////////////////////////////////////
 
 });
