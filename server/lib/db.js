@@ -20,13 +20,18 @@ const dbMethods = {};
   }
 
   dbMethods.getTweets = (callback) => {
+    //connect to mongo
     MongoClient.connect(MONGODB_URI, (err, db) => {
       let collection = db.collection('tweets');
+      //check for errors
       assert.equal(null, err);
+      //read tweets collections
       collection.find().toArray((err, results) => {
         if(err) {
           callback(err);
         } else {
+          //send array of results cursor to callback
+          //see tweets.js
           callback(null, results);
         }
         db.close();

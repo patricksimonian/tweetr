@@ -46,8 +46,10 @@ $(document).ready(function () {
   //creates a nested tweet element with the structure of:
   // section[class=tweet]>(header>img+h2+span)+(article>p)+(footer>span)
   function createTweetElement(userObj) {
+    //instead of all these appends
+    //make a single string of all nested elements and append
+    var timeElapsed = Math.floor((Date.now() - userObj.created_at)/8.64e+7); //milliseconds in a day;
     var $tweet = $('<section></section>').addClass('tweet');
-    var timeElapsed = Math.floor((Date.now() - userObj.created_at)/8.64e+7) //milliseconds in a day;
     $tweet.append('<header>');
     $tweet.append(`<article><p>${userObj.content.text}</p></article>`);
     $tweet.append('<footer>');

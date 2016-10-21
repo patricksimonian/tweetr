@@ -1,33 +1,33 @@
 .new-tweet {
-  position: inherit;
-  width: 80%;
-  height: 150px;
   border: 2px solid gray;
   border-radius: 5px;
+  display: none;
+  height: 150px;
   margin: 0 auto;
   padding: 10px;
-  display: none;
+  position: inherit;
+  width: 80%;
   z-index: 1;
 }
 
-.new-tweet > h2 {
+.new-tweet h2 {
   border-bottom: 2px solid gray;
 }
-.new-tweet > form {
+.new-tweet form {
+  height: 100px;
   margin: 5px auto;
   width: 100%
-  height: 100px;
 }
-textarea {
-  width: 100%;
-  margin: 10px 0px 0px 0px;
+.new-tweet textarea {
   height: 60px;
+  margin: 10px 0px 0px 0px;
   padding: 5px;
+  width: 100%;
 }
 .new-tweet .counter {
   float: right;
 }
-.new-tweet > form > input[type=submit] {
+.new-tweet form input[type=submit] {
   border-radius: 3px;
 }
 .new-tweet .clear {
