@@ -1,0 +1,49 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+.container {
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  position: relative;
+  top: 80px;
+  width: 450px;
+  z-index: 0;
+}
+.warning {
+  #zerochars {
+    display: none;
+  }
+  #maxchars {
+    display: none;
+  }
+  background-color: #d2cdcd;
+  border: 2px solid gray;
+  border-radius: 3px;
+  display: none;
+  height: 70px;
+  left: 27.5%;
+  position: absolute;
+  text-align: center;
+  top: 45px;
+  width: 200px;
+  z-index: 2;
+}

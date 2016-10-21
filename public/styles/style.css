@@ -1,0 +1,166 @@
+#nav-bar {
+  height: 80px;
+  padding: 0 2em;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  top: 0; }
+  #nav-bar .dropdown {
+    width: 175px;
+    position: relative;
+    padding-top: 16px; }
+    #nav-bar .dropdown li {
+      display: none; }
+  #nav-bar .header {
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+    top: -1em; }
+  #nav-bar .logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px; }
+  #nav-bar .nav-options {
+    float: right; }
+    #nav-bar .nav-options p {
+      display: inline-block;
+      margin-left: 20px; }
+    #nav-bar .nav-options div {
+      float: left;
+      height: inherit; }
+  #nav-bar div {
+    display: inline-block; }
+  #nav-bar p {
+    font-size: 1.5em;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 12px; }
+
+#nav-bar:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+.new-tweet {
+  border: 2px solid gray;
+  border-radius: 5px;
+  display: none;
+  height: 150px;
+  margin: 0 auto;
+  padding: 10px;
+  position: inherit;
+  width: 80%;
+  z-index: 1; }
+  .new-tweet .counter {
+    float: right; }
+  .new-tweet form {
+    height: 100px;
+    margin: 5px auto;
+    width: 100%; }
+    .new-tweet form input[type=submit] {
+      border-radius: 3px; }
+  .new-tweet h2 {
+    border-bottom: 2px solid gray; }
+  .new-tweet textarea {
+    height: 60px;
+    margin: 10px 0px 0px 0px;
+    padding: 5px;
+    width: 100%; }
+
+.tweet {
+  border: 2px solid gray;
+  border-radius: 5px;
+  height: 180px;
+  margin: 15px auto;
+  opacity: .7;
+  position: relative;
+  width: 80%;
+  z-index: 1; }
+  .tweet article {
+    border-bottom: 1px solid gray;
+    height: 75px;
+    padding: 10px;
+    word-wrap: break-word; }
+  .tweet footer .icon {
+    float: right; }
+    .tweet footer .icon .fa {
+      display: inline-block;
+      margin-left: 5px; }
+  .tweet footer {
+    bottom: 0;
+    margin: 5px;
+    position: absolute;
+    width: 95%; }
+  .tweet .handler {
+    float: right; }
+  .tweet header {
+    background-color: #f3f3f3;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 60px;
+    padding: 5px; }
+    .tweet header span {
+      float: right; }
+  .tweet header:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden; }
+  .tweet h2 {
+    float: left;
+    margin-left: 10px; }
+  .tweet img {
+    border-radius: 5px;
+    float: left; }
+
+.tweet:hover {
+  opacity: 1; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+body {
+  background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+.container {
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  position: relative;
+  top: 80px;
+  width: 450px;
+  z-index: 0; }
+
+.warning {
+  background-color: #d2cdcd;
+  border: 2px solid gray;
+  border-radius: 3px;
+  display: none;
+  height: 70px;
+  left: 27.5%;
+  position: absolute;
+  text-align: center;
+  top: 45px;
+  width: 200px;
+  z-index: 2; }
+  .warning #zerochars {
+    display: none; }
+  .warning #maxchars {
+    display: none; }
