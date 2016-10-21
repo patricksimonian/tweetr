@@ -35,7 +35,6 @@ body {
 }
 .warning {
   background-color: #d2cdcd;
-  color: inherit;
   position: absolute;
   z-index: 2;
   width: 200px;

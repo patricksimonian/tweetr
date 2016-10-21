@@ -1,0 +1,40 @@
+body {
+  background-color: #eee;
+  color: #244751;
+}
+#nav-bar {
+  background-color: #009f86;
+  color: #e8fdff;
+}
+.dropdown {
+  background-color: #009f86;
+}
+
+#nav-bar p:hover {
+  background-color: #e8fdff;
+  color: #009f86;
+}
+
+.dropdown li {
+  background-color: #009f86;
+  color: #e8fdff;
+}
+.dropdown li:hover {
+  background-color: #e8fdff;
+  color: #009f86;
+}
+.new-tweet .clear:hover {
+  background-color: #009f86;
+  color: white;
+}
+.new-tweet .clear {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 1px;
+}
+.tweet .fa:hover {
+  color: #009f86;
+}
+.warning {
+  color: #009f86;
+}

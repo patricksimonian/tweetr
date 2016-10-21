@@ -1,6 +1,4 @@
-.tweet footer .icon .fa:hover {
-  color: #009f86;
-}
+
 .tweet footer .icon .fa {
   display: inline-block;
   margin-left: 5px;
@@ -20,22 +18,16 @@
 .tweet .handler {
   float: right;
 }
-.tweet header {
-  background-color: #f3f3f3;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  height: 60px;
-  padding: 5px;
-}
-.tweet img {
-  border-radius: 5px;
-  float: left;
-}
-.tweet h2 {
-  float: left;
-  margin-left: 10px;
+.tweet footer {
+  bottom: 0;
+  margin: 5px;
+  position: absolute;
+  width: 95%;
 }
 /*clear floats*/
+.tweet header span {
+  float: right;
+}
 .tweet header:after {
   clear: both;
   content: ".";
@@ -43,11 +35,20 @@
   height: 0;
   visibility: hidden;
 }
-.tweet footer {
-  bottom: 0;
-  margin: 5px;
-  position: absolute;
-  width: 95%;
+.tweet header {
+  background-color: #f3f3f3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 60px;
+  padding: 5px;
+}
+.tweet h2 {
+  float: left;
+  margin-left: 10px;
+}
+.tweet img {
+  border-radius: 5px;
+  float: left;
 }
 .tweet {
   border: 2px solid gray;

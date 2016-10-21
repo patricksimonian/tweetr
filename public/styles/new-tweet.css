@@ -1,3 +1,24 @@
+
+.new-tweet .counter {
+  float: right;
+}
+.new-tweet form input[type=submit] {
+  border-radius: 3px;
+}
+.new-tweet form {
+  height: 100px;
+  margin: 5px auto;
+  width: 100%
+}
+.new-tweet h2 {
+  border-bottom: 2px solid gray;
+}
+.new-tweet textarea {
+  height: 60px;
+  margin: 10px 0px 0px 0px;
+  padding: 5px;
+  width: 100%;
+}
 .new-tweet {
   border: 2px solid gray;
   border-radius: 5px;
@@ -8,34 +29,4 @@
   position: inherit;
   width: 80%;
   z-index: 1;
-}
-
-.new-tweet h2 {
-  border-bottom: 2px solid gray;
-}
-.new-tweet form {
-  height: 100px;
-  margin: 5px auto;
-  width: 100%
-}
-.new-tweet textarea {
-  height: 60px;
-  margin: 10px 0px 0px 0px;
-  padding: 5px;
-  width: 100%;
-}
-.new-tweet .counter {
-  float: right;
-}
-.new-tweet form input[type=submit] {
-  border-radius: 3px;
-}
-.new-tweet .clear {
-  border: 1px solid gray;
-  border-radius: 3px;
-  padding: 1px;
-}
-.new-tweet .clear:hover {
-  background-color: #009f86;
-  color: white;
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Tweeter - Home Page</title>
     <!-- Meta Information -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tweeter - Home Page</title>
      <!-- set font -->
      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700,700i" rel="stylesheet">
     <!-- External CSS -->
@@ -23,12 +23,11 @@
     <!-- External JS -->
 
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-    <!-- composer char counter -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <!-- font icons -->
     <script src="https://use.fontawesome.com/ab80b05f22.js"></script>
     <!-- themes function -->
     <script type="text/javascript" src="/scripts/render-themes.js"></script>
+    <!-- tweeter composition field scripts -->
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
@@ -68,9 +67,14 @@
         <p id="maxchars">writing less than 140 characters :)</p>
       </div>
       <!-- where tweet history is added -->
-      <section class="tweets-container"></section>
+      <div class="tweets-container"></div>
 
 
     </main>
+    <script type="text/javascript" src="/scripts/tweeter-composition-utils.js"></script>
+    <!-- tweet generation scripts -->
+    <script type="text/javascript" src="/scripts/tweet-factory.js"></script>
+    <!-- composer char counter -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>

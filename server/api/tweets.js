@@ -24,7 +24,6 @@ module.exports = function(db) {
       res.status(400);
       return res.send("{'error': 'invalid request'}\n");
     }
-
     const user = req.body.user ? req.body.user : User.generateRandomUser();
     const tweet = {
       user: user,
