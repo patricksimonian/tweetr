@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   //composition field
   let newtweetForm = $('.counter').closest('form');
