@@ -94,6 +94,7 @@ $(document).ready(function () {
       if(onLoad) {
         return renderTweet(tweetDataObj);
       }
+      console.log(tweetDataObj)
       return renderTweet(tweetDataObj[tweetDataObj.length -1]);
     });
   }
@@ -131,7 +132,7 @@ $(document).ready(function () {
         url: "/tweets/",
         method: "POST",
         data: $(this).serialize()
-      }).done(loadTweets(false)); S
+      }).done(loadTweets(false));
     } else {
       displayWarning();
     }

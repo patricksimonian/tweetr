@@ -7,8 +7,14 @@ const tweets  = express.Router();
 module.exports = function(db) {
 
   tweets.get("/", function(req, res) {
-    let tweets = db.getTweets();
-    console.log(tweets);
+    let tweets;
+    db.getTweets((err, val) => {
+      if(err) {
+        console.log(err);
+        throw err;
+      }
+      tweets = val.sort(function(a, b) { return a.created_at - b.created_at });;
+    });
     // simulate delay
     setTimeout(() => {
       return res.json(tweets);
@@ -16,7 +22,6 @@ module.exports = function(db) {
   });
 
   tweets.post("/", function(req, res) {
-    console.log(req.body);
     if (!req.body.text) {
       res.status(400);
       return res.send("{'error': 'invalid request'}\n");
