@@ -32,9 +32,9 @@ body {
   border-radius: 3px;
   padding: 1px;
 }
-.tweet .fa:hover {
+/*.tweet .fa:hover {
   color: #009f86;
 }
-.warning {
+*/.warning {
   color: #009f86;
 }

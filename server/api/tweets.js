@@ -6,6 +6,29 @@ const tweets  = express.Router();
 
 module.exports = function(db) {
 
+  tweets.post("/like", function(req, res) {
+    db.getTweetById(req.body.tweetid, true, (err, val) => {
+      if(err) {
+        console.log(err);
+        throw err;
+      }
+      db.updateTweetContentCounter(req.body.tweetid, val);
+      res.json(val);
+    });
+  });
+
+   tweets.post("/unlike", function(req, res) {
+    db.getTweetById(req.body.tweetid, false, (err, val) => {
+      if(err) {
+        console.log(err);
+        throw err;
+      }
+      db.updateTweetContentCounter(req.body.tweetid, val);
+      res.json(val);
+    });
+  });
+
+
   tweets.get("/", function(req, res) {
     db.getTweets((err, val) => {
     let tweets;
@@ -28,13 +51,16 @@ module.exports = function(db) {
     const tweet = {
       user: user,
       content: {
-        text: req.body.text
+        id: User.generateUniqueId,
+        text: req.body.text,
+        likes: 0
       },
       created_at: Date.now()
     };
     db.saveTweet(tweet);
     return res.send();
   });
+
 
   return tweets;
 

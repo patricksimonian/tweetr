@@ -38,5 +38,10 @@ module.exports = {
       handle: userHandle,
       avatars: avatars
     };
+  },
+  generateUniqueId: () => {
+    const id = chance.string({length: 8});
+    return id;
+
   }
 };

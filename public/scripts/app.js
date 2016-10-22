@@ -1,11 +1,18 @@
+
 $(document).ready(function () {
   //composition field
   let newtweetForm = $('.counter').closest('form');
   //initial load of tweets in database
   (function loadPage() {
+
     renderTheme("Classic");
     loadTweets(true);
   })();
+
+//=================likes==================//
+
+
+
 
 //===========COMPOSITION FORM=======================//
  //post tweet field to server

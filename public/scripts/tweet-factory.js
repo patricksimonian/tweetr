@@ -3,7 +3,7 @@
 //creates a nested tweet element with the structure of:
 function createTweetElement(userObj) {
   var timeElapsed = Math.floor((Date.now() - userObj.created_at)/8.64e+7); //milliseconds in a day;
-  var $tweet = $('<section></section>').addClass('tweet');
+  var $tweet = $(`<section data-tweetID='${userObj.content.id}'></section>`).addClass('tweet');
         //<section>
   $tweet.append(`<header>
                   <img src=${userObj.user.avatars.small}>
@@ -14,8 +14,9 @@ function createTweetElement(userObj) {
                 <footer>
                   <span>${timeElapsed} days ago</span>
                   <span class="icon">
+                    <p class="fa counter">0</p>
+                    <i class="fa fa-heart" data-isToggled='false' onclick="setLike(event)" aria-hidden="true"></i>
                     <i class="fa fa-flag" aria-hidden="true"></i>
-                    <i class="fa fa-heart" aria-hidden="true"></i>
                     <i class="fa fa-retweet" aria-hidden="true"></i>
                   </span>
                 </footer>
@@ -54,3 +55,37 @@ function loadTweets(onLoad) {
     return renderTweet(tweetDataObj[tweetDataObj.length -1]);
   });
 }
+function setLike(event) {
+  var tweetid = $(event.target).closest("section").data("tweetid");
+  var params = new Object();
+    params["tweetid"] = tweetid;
+    //params["userclickstate"]
+  if($(event.target).data("istoggled") === false) {
+    $.ajax({
+        url: "/tweets/like",
+        method: "POST",
+        data: params,
+        success: function(data) {
+          if(data) {
+            $(event.target).css("color", "red");
+            $(event.target).siblings("p.counter").text(data);
+            $(event.target).data("istoggled", true);
+          }
+        }
+    });
+  } else {
+    $.ajax({
+        url: "/tweets/unlike",
+        method: "POST",
+        data: params,
+        success: function(data) {
+          if(data) {
+            $(event.target).css("color", "black");
+            $(event.target).siblings("p.counter").text(data);
+            $(event.target).data("istoggled", false);
+          }
+        }
+    });
+  }
+}
+
