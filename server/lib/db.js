@@ -71,7 +71,7 @@ const dbMethods = {};
       //read tweets collections
     collection.update({'content.id' : `${id}`},
       { $set: { 'content.likes' : newCount  } }).then(function(data) {
-      console.log("im finished");
+      console.log("im finished", newCount);
       db.close();
       });
 

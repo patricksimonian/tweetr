@@ -41,6 +41,7 @@ module.exports = {
   },
   generateUniqueId: () => {
     const id = chance.string({length: 8});
+    console.log("gen'd", id);
     return id;
 
   }

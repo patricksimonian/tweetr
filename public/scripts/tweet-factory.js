@@ -14,13 +14,14 @@ function createTweetElement(userObj) {
                 <footer>
                   <span>${timeElapsed} days ago</span>
                   <span class="icon">
-                    <p class="fa counter">0</p>
+                    <p class="fa counter">${userObj.content.likes}</p>
                     <i class="fa fa-heart" data-isToggled='false' onclick="setLike(event)" aria-hidden="true"></i>
                     <i class="fa fa-flag" aria-hidden="true"></i>
                     <i class="fa fa-retweet" aria-hidden="true"></i>
                   </span>
                 </footer>
   `);  //</section>
+  console.log(userObj.content.likes, "likes");
   return $tweet;
 }
 //renders a new tweet by passing in the appropriate data into the createTweetElement function
@@ -66,11 +67,11 @@ function setLike(event) {
         method: "POST",
         data: params,
         success: function(data) {
-          if(data) {
+
             $(event.target).css("color", "red");
             $(event.target).siblings("p.counter").text(data);
             $(event.target).data("istoggled", true);
-          }
+
         }
     });
   } else {
@@ -79,11 +80,11 @@ function setLike(event) {
         method: "POST",
         data: params,
         success: function(data) {
-          if(data) {
+
             $(event.target).css("color", "black");
             $(event.target).siblings("p.counter").text(data);
             $(event.target).data("istoggled", false);
-          }
+
         }
     });
   }

@@ -51,7 +51,7 @@ module.exports = function(db) {
     const tweet = {
       user: user,
       content: {
-        id: User.generateUniqueId,
+        id: User.generateUniqueId(),
         text: req.body.text,
         likes: 0
       },
