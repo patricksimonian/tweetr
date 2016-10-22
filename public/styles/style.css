@@ -1,10 +1,10 @@
 #nav-bar {
   height: 80px;
+  left: 0;
   padding: 0 2em;
   position: fixed;
-  z-index: 1;
   right: 0;
-  left: 0;
+  z-index: 1;
   top: 0; }
   #nav-bar .dropdown {
     width: 175px;
@@ -16,7 +16,8 @@
     font-size: 2em;
     text-align: center;
     position: relative;
-    top: -1em; }
+    top: -1em;
+    display: inline-block; }
   #nav-bar .logo {
     width: 80px;
     height: 80px;
