@@ -38,7 +38,8 @@ const dbMethods = {};
       });
    });
   }
-
+  //grabs a singular tweet from the database by query of its ID which is stored
+  //as a data attribute on the specific tweets section element on client
   dbMethods.getTweetById = (id, isLike, callback) => {
        //connect to mongo
     MongoClient.connect(MONGODB_URI, (err, db) => {
@@ -62,6 +63,7 @@ const dbMethods = {};
       });
     });
   }
+  //updates database  with the new num  of likes for specfic tweet object
   dbMethods.updateTweetContentCounter = (id, newCount) => {
      //connect to mongo
     MongoClient.connect(MONGODB_URI, (err, db) => {
@@ -71,7 +73,6 @@ const dbMethods = {};
       //read tweets collections
     collection.update({'content.id' : `${id}`},
       { $set: { 'content.likes' : newCount  } }).then((data) => {
-      console.log("im finished", newCount);
       db.close();
       });
 

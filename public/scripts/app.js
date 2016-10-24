@@ -9,10 +9,6 @@ $(document).ready(function () {
     loadTweets(true);
   })();
 
-//=================likes==================//
-
-
-
 
 //===========COMPOSITION FORM=======================//
  //post tweet field to server

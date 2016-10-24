@@ -56,11 +56,17 @@ function loadTweets(onLoad) {
     return renderTweet(tweetDataObj[tweetDataObj.length -1]);
   });
 }
+
+//called when the heart button is clicked on the tweet
+//the color is toggled via a data element attribute on the heart icon element
+//called isToggled. This  attribute is repsonsible for the respective ajax call to server
+//when the heart is clicked
 function setLike(event) {
   var tweetid = $(event.target).closest("section").data("tweetid");
   var params = new Object();
     params["tweetid"] = tweetid;
-    //params["userclickstate"]
+    //params["userclickstate"] //future use for user login implementation***
+
   if($(event.target).data("istoggled") === false) {
     $.ajax({
         url: "/tweets/like",

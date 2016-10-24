@@ -52,6 +52,5 @@ function displayWarning() {
     $(".warning > #maxchars").css("display", "none");
     $(".warning > #zerochars").css("display", "none");
   }, 2000);
-
 }
 
