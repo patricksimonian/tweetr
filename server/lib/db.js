@@ -70,7 +70,7 @@ const dbMethods = {};
       assert.equal(null, err);
       //read tweets collections
     collection.update({'content.id' : `${id}`},
-      { $set: { 'content.likes' : newCount  } }).then(function(data) {
+      { $set: { 'content.likes' : newCount  } }).then((data) => {
       console.log("im finished", newCount);
       db.close();
       });

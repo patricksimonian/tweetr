@@ -1,5 +1,5 @@
 //=============UTILS FOR COMPOSITION==========//
-let newtweetForm = $('.counter').closest('form');
+var newtweetForm = $('.counter').closest('form');
 
 //clears the composition text field
 function clearField() {
